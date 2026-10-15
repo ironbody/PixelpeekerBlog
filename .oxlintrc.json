@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "react", "jsx-a11y"],
+  "env": {
+    "browser": true
+  },
+  "ignorePatterns": ["public"],
+  "rules": {
+    "jsx-a11y/prefer-tag-over-role": "off"
+  }
+}

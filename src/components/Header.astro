@@ -1,50 +1,28 @@
 ---
 import Navigation from "./Navigation.astro";
 import ToggleTheme from "./ToggleTheme.tsx";
-
-const domain = "Pixel Peeker";
 ---
 
 <header class="bg-base-200">
-  <nav class="navbar mx-auto md:max-w-5xl">
-    <section class="navbar-start">
-      <div class="dropdown">
-        <div
-          role="button"
-          tabindex="0"
-          class="btn btn-ghost md:hidden"
-          aria-label="navigation"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h8m-8 6h16"></path></svg
-          >
-        </div>
-        <ul
-          class="menu dropdown-content rounded-box menu-sm z-[1] mt-3 w-52 bg-base-100 p-2 shadow"
-        >
-          <Navigation />
-        </ul>
-      </div>
-      <a href="/" class="btn btn-ghost no-animation text-2xl normal-case"
-        >{domain}</a
+  <nav
+    class="mx-auto grid min-h-16 max-w-4xl grid-cols-[1fr_auto] items-center
+          px-2 font-space-mono md:grid-cols-[1fr_auto_1fr] md:px-4"
+  >
+    <section class="flex items-center">
+      <ToggleTheme client:only="react">
+        <span slot="fallback" class="btn btn-square btn-ghost"></span>
+      </ToggleTheme>
+      <a
+        href="/"
+        class="px-2 font-space-mono text-base font-normal normal-case md:text-lg"
       >
+        $pixelpeeker
+      </a>
     </section>
-    <section class="navbar-center hidden md:flex">
-      <ul class="menu menu-horizontal px-1 text-lg">
+    <section>
+      <ul class="flex text-sm md:gap-2 md:text-base">
         <Navigation />
       </ul>
-    </section>
-    <section class="navbar-end">
-      <ToggleTheme client:only="react" />
     </section>
   </nav>
 </header>

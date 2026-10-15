@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+
 interface Props {
   platform: string;
   link: string;
@@ -8,4 +9,7 @@ interface Props {
 const { platform, link, iconName } = Astro.props;
 ---
 
-<a href={link} class="btn btn-primary no-animation normal-case text-lg"><Icon name={iconName} size={43} class="h-full px-1"/>{platform}</a>
+<a href={link} class="btn text-lg normal-case btn-primary">
+  <Icon name={iconName} size={43} class="h-full px-1" />
+  {platform}
+</a>

@@ -1,8 +1,8 @@
 ---
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import type { GetStaticPaths } from "astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 export const getStaticPaths = (async () => {
   const allPosts = await getCollection("blog");
@@ -31,12 +31,12 @@ const { posts } = Astro.props;
 <Layout title={tag}>
   <p>Posts tagged with {tag}</p>
   <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}`} data-astro-prefetch>{post.data.title}</a>
-        </li>
-      ))
-    }
+    {posts.map((post) => (
+      <li>
+        <a href={`/blog/${post.id}`} data-astro-prefetch>
+          {post.data.title}
+        </a>
+      </li>
+    ))}
   </ul>
 </Layout>

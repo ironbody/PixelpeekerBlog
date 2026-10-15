@@ -1,19 +1,22 @@
 ---
 import { getCollection } from "astro:content";
 
-const allPosts = await getCollection("blog");
+const allPosts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 
 const lastThreePosts = allPosts.slice(0, 3);
 ---
 
-<div class="grid lg:grid-cols-3 gap-4 not-prose">
-  {
-    lastThreePosts.map(post => (
-      <a href={`/blog/${post.slug}`} data-astro-prefetch>
-        <div class=" w-full h-full bg-neutral text-neutral-content items-center text-center p-4 rounded-lg">
-            <h2 class="leading-tight font-bold">{post.data.title}</h2>
-        </div>
-      </a>
-    ))
-  }
+<div class="not-prose grid gap-4 lg:grid-cols-3">
+  {lastThreePosts.map((post) => (
+    <a href={`/blog/${post.id}`} data-astro-prefetch>
+      <div
+        class="h-full w-full items-center rounded-lg bg-neutral p-4
+          text-center text-neutral-content"
+      >
+        <h2 class="font-display leading-tight">{post.data.title}</h2>
+      </div>
+    </a>
+  ))}
 </div>

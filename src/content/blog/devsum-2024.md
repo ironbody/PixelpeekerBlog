@@ -92,7 +92,7 @@ Redis or Docker without paying the original developers for their work.
 Isn’t it unbelievable how normalized this exploitation is? Nowhere else
 is it normal for companies to profit from someone else’s free labor? I
 hope that someday, a package manager for a major language implements a
-billing system so that devs can *actually be paid* for their work.
+billing system so that devs can _actually be paid_ for their work.
 According to David, Nuget was supposed to have one, but Microsoft sadly
 removed it before launch. Check this one out if you have the time!
 

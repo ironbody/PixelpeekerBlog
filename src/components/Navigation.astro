@@ -1,7 +1,33 @@
 ---
+const links = [
+  { href: "/blog/", label: "blog" },
+  { href: "/projects/", label: "projects" },
+  { href: "/about/", label: "me" },
+  // { href: "/tags/", label: "Tags" },
+];
 
+const pathname = Astro.url.pathname.endsWith("/")
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`;
 ---
 
-<li><a href="/blog/">Blog</a></li>
-<li><a href="/about/">About</a></li>
-<li><a href="/tags/">Tags</a></li>
+{links.map(({ href, label }) => {
+  const isActive = pathname.startsWith(href);
+  // daisyUI's menu gives [aria-current] links a filled background, so reset it
+  return (
+    <li>
+      <a
+        href={href}
+        class:list={[
+          "inline-block px-2 py-2",
+          isActive &&
+            "bg-transparent text-current underline underline-offset-10",
+          isActive && "decoration-primary decoration-2",
+        ]}
+        aria-current={isActive ? "page" : undefined}
+      >
+        {label}
+      </a>
+    </li>
+  );
+})}

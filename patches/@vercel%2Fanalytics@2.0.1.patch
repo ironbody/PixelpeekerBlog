@@ -1,0 +1,11 @@
+diff --git a/dist/astro/component.ts b/dist/astro/component.ts
+index 46def136b95d39a2a1834652971263d90e37a8ea..f5a495faf1ef0af69b2f0f5b0a8ad5c9db87c6e0 100644
+--- a/dist/astro/component.ts
++++ b/dist/astro/component.ts
+@@ -2,6 +2,5 @@ export type {
+   AnalyticsProps,
+   BeforeSend,
+   BeforeSendEvent,
+-  // @ts-expect-error this filed is copied to dist, so it's ok to reference the generated index.d.ts
+ } from '../index.d.ts';
+ export { default } from './index.astro';
