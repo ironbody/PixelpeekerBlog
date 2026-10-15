@@ -1,6 +1,9 @@
 {
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://openapi.vercel.sh/": true
+  },
   "[astro]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
   }
