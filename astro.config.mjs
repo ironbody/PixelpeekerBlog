@@ -10,6 +10,7 @@ import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://pixelpeeker.gay",
   integrations: [
     expressiveCode({
       // the first theme is the default, and the media query covers "auto" mode
