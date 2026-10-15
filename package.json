@@ -51,6 +51,7 @@
   "engines": {
     "node": ">=22.12.0"
   },
+  "packageManager": "bun@1.4.3",
   "patchedDependencies": {
     "@vercel/analytics@2.0.1": "patches/@vercel%2Fanalytics@2.0.1.patch"
   }
